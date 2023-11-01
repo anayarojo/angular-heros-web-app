@@ -1,1 +1,49 @@
-<p>form-page works!</p>
+
+<div *ngIf="hero; else loading;" class="container">
+  <div class="grid">
+    <!-- Image -->
+    <div class="col-12 sm:col-6 md:col-4 xl:col-3">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ hero.alter_ego }}</mat-card-title>
+          <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="hero | heroImage" alt="hero.superhero">
+      </mat-card>
+    </div>
+    <!-- Info -->
+    <div class="col-12 sm:col-6 md:col-8 xl:col-9">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Information</mat-card-title>
+          <mat-card-subtitle>{{ hero.superhero }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>{{ hero.first_appearance }}</mat-list-item>
+            <mat-list-item>{{ hero.characters }}</mat-list-item>
+            <mat-list-item>{{ hero.publisher }}</mat-list-item>
+            <mat-list-item>{{ hero.alter_ego }}</mat-list-item>
+          </mat-list>
+          <button mat-button color="warn" (click)="goBack()">
+            Back
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="flex align-items-center justify-content-center h-20rem">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<!-- <ng-template #loading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template> -->

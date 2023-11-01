@@ -10,6 +10,9 @@ import {
     ListPageComponent,
     SearchPageComponent,
 } from './pages';
+import { HerosService } from './services';
+import { CardComponent } from './components/card/card.component';
+import { HeroImagePipe } from './pipes/hero-image.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,17 @@ import {
     ListPageComponent,
     SearchPageComponent,
     FormPageComponent,
-    HeroPageComponent
+    HeroPageComponent,
+    CardComponent,
+    HeroImagePipe
   ],
   imports: [
     CommonModule,
     MaterialModule,
     HerosRoutingModule
+  ],
+  providers: [
+    HerosService
   ]
 })
 export class HerosModule { }
