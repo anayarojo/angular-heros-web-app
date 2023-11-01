@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { MaterialModule } from '../material';
 import { AuthRoutingModule } from './auth-routing.module';
 import {
     LayoutPageComponent,
@@ -16,7 +17,8 @@ import {
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    MaterialModule
   ]
 })
 export class AuthModule { }

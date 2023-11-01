@@ -30,3 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - https://material.angular.io/
 - https://primeflex.org/
 - https://primeng.org/
+- https://tailwindcss.com/
