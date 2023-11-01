@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { MaterialModule } from '../material';
 import { HerosRoutingModule } from './heros-routing.module';
 import {
     FormPageComponent,
@@ -20,6 +21,7 @@ import {
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     HerosRoutingModule
   ]
 })
