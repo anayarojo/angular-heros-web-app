@@ -4,12 +4,20 @@
     <mat-label>
       Search a hero
     </mat-label>
-    <input type="text" matInput [formControl]="searchInput">
-    <mat-autocomplete autoActiveFirstOption="matAutocomplete">
-      <mat-option *ngFor="let option of heros | async" [value]="option">
-        {{ option.superhero }}}
+    <input
+      type="text"
+      matInput
+      [formControl]="searchInput"
+      (input)="search()"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selectOption($event)">
+      <mat-option *ngFor="let hero of heros" [value]="hero">
+        {{ hero.superhero }}
+      </mat-option>
+      <mat-option *ngIf="heros.length === 0 && searchInput.value && searchInput.value.length > 0" value="">
+        Was not found any hero with that name {{ searchInput.value }}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  {{ searchInput.value | json }}
 </div>
