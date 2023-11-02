@@ -25,7 +25,10 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="spacer"></span>
-    <button mat-button>Logout</button>
+    <button mat-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
   </mat-toolbar>
 
   <!-- Content -->

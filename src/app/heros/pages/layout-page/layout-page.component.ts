@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout-page',
@@ -24,4 +25,10 @@ export class LayoutPageComponent {
       route: './search'
     },
   ]
+
+  constructor(private router: Router) {}
+
+  public logout(): void {
+    this.router.navigate(['/auth']);
+  }
 }
