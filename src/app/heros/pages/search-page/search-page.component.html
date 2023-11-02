@@ -1,1 +1,15 @@
-<p>search-page works!</p>
+<div class="flex flex-column">
+  <h1>Search</h1>
+  <mat-form-field>
+    <mat-label>
+      Search a hero
+    </mat-label>
+    <input type="text" matInput [formControl]="searchInput">
+    <mat-autocomplete autoActiveFirstOption="matAutocomplete">
+      <mat-option *ngFor="let option of heros | async" [value]="option">
+        {{ option.superhero }}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  {{ searchInput.value | json }}
+</div>
