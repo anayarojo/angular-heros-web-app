@@ -166,6 +166,33 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "c_BP956",
+      "superhero": "anayeitor",
+      "publisher": "DC Comics",
+      "alter_ego": "anayarojo",
+      "first_appearance": "here",
+      "characters": "test",
+      "alt_img": "https://www.purearts.com/cdn/shop/products/DSC01062_X2.3_540x.jpg"
+    },
+    {
+      "id": "rkT3ran",
+      "superhero": "fdsfds",
+      "publisher": "DC Comics",
+      "alter_ego": "fdsfdsfds",
+      "first_appearance": "fdsfsdfds",
+      "characters": "fsdfdsfds",
+      "alt_img": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/products/city/product-compare/splendor-plus-org-leftweb.png"
+    },
+    {
+      "id": "XApXOqA",
+      "superhero": "dsadsa",
+      "publisher": "Marvel Comics",
+      "alter_ego": "dsadas",
+      "first_appearance": "dasdsa",
+      "characters": "dsadsad",
+      "alt_img": "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/251524e3b5517b689317437d881eccf0.jpe"
     }
   ]
 }
