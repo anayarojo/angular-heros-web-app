@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthService } from '../../services';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -9,9 +11,14 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   public login(): void {
-    this.router.navigate(['/heros']);
+    this.authService.login('fernando@gmail.com', '123456')
+      .subscribe(user => {
+        if (user.id) {
+          this.router.navigate(['/']);
+        }
+      });
   }
 }

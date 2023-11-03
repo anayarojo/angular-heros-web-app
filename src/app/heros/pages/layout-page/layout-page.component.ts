@@ -1,5 +1,13 @@
-import { Component } from '@angular/core';
+import {
+    Component,
+    OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
+
+import {
+    AuthService,
+    User,
+} from '../../../auth';
 
 @Component({
   selector: 'app-layout-page',
@@ -7,8 +15,8 @@ import { Router } from '@angular/router';
   styles: [
   ]
 })
-export class LayoutPageComponent {
-  public sidebarItems = [
+export class LayoutPageComponent implements OnInit {
+  public herosSidebarItems = [
     {
       icon: 'label',
       label: 'List',
@@ -26,7 +34,18 @@ export class LayoutPageComponent {
     },
   ]
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.checkAuthentication()
+      .subscribe(isAuthenticated => {
+
+      });
+  }
+
+  get user(): User | undefined {
+    return this.authService.currentUser;
+  }
 
   public logout(): void {
     this.router.navigate(['/auth']);
