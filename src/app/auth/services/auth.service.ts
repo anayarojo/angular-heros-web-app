@@ -26,7 +26,7 @@ export class AuthService {
   login(email: string, password: string): Observable<User> {
     // Regular process
     // this.http.post('login', {email, password});
-    return this.http.get<User>(`${this.baseUrl}/users/1`)
+    return this.http.get<User>(`${this.baseUrl}/users/65486076e5cffff698176473`)
       .pipe(
         tap(user => this.user = user),
         tap(user => localStorage.setItem('token', this.generateToken())),
@@ -41,7 +41,7 @@ export class AuthService {
     localStorage.removeItem('token_id');
     localStorage.removeItem('token_user');
 
-    return of();
+    return of(void 0);
   }
 
   checkAuthentication(): Observable<boolean> {
@@ -49,7 +49,7 @@ export class AuthService {
       return of(false);
     }
 
-    return this.http.get<User>(`${this.baseUrl}/users/1`)
+    return this.http.get<User>(`${this.baseUrl}/users/65486076e5cffff698176473`)
     .pipe(
       tap(user => this.user = user),
       map(user => !!user),
@@ -58,7 +58,7 @@ export class AuthService {
   }
 
   private generateToken(): string {
-    return this.generateUuid();
+    return ' '.repeat(4).replace(/./g, () => this.generateUuid());
   }
 
   private generateUuid(): string {

@@ -19,18 +19,18 @@ export class HerosService {
   constructor(private httpClient: HttpClient) {}
 
   getHeros(): Observable<Hero[]> {
-    return this.httpClient.get<Hero[]>(`${this.baseUrl}/heroes`);
+    return this.httpClient.get<Hero[]>(`${this.baseUrl}/heros`);
   }
 
   getHeroById(id: string): Observable<Hero|undefined> {
-    return this.httpClient.get<Hero>(`${this.baseUrl}/heroes/${id}`)
+    return this.httpClient.get<Hero>(`${this.baseUrl}/heros/${id}`)
       .pipe(
         catchError(error => of(undefined))
       );
   }
 
   getSuggestions(query: string, limit: number = 5): Observable<Hero[]> {
-    return this.httpClient.get<Hero[]>(`${this.baseUrl}/heroes?q=${query}&_limit=${limit}`);
+    return this.httpClient.get<Hero[]>(`${this.baseUrl}/heros?q=${query}&_limit=${limit}`);
   }
 
   addHero(hero: Hero): Observable<Hero> {
@@ -41,11 +41,11 @@ export class HerosService {
     if (!hero.id) {
       throw new Error('Hero id is required');
     }
-    return this.httpClient.patch<Hero>(`${this.baseUrl}/heroes/${hero.id}`, hero);
+    return this.httpClient.patch<Hero>(`${this.baseUrl}/heros/${hero.id}`, hero);
   }
 
   deleteHero(id: string): Observable<boolean> {
-    return this.httpClient.delete<Hero>(`${this.baseUrl}/heroes/${id}`)
+    return this.httpClient.delete<Hero>(`${this.baseUrl}/heros/${id}`)
       .pipe(
         catchError(error => of(false)),
         map(resp => true)

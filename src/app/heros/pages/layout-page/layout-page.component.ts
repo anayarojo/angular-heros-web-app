@@ -48,6 +48,8 @@ export class LayoutPageComponent implements OnInit {
   }
 
   public logout(): void {
-    this.router.navigate(['/auth']);
+    this.authService.logout().subscribe(() => {
+      this.router.navigate(['/auth']);
+    });
   }
 }

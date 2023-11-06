@@ -1,12 +1,32 @@
 {
   "users": [
     {
-      "id": 1,
-      "usuario": "John Doe",
-      "email": "john.due@gmail.com"
+      "id": "65486076e5cffff698176473",
+      "user": "John Doe",
+      "email": "john.due@email.com"
+    },
+    {
+      "id": "6548608d7cce6fab63339777",
+      "user": "admin",
+      "email": "admin@email.com"
+    },
+    {
+      "id": "654860964917a5f0d9427d47",
+      "user": "user1",
+      "email": "user1@email.com"
+    },
+    {
+      "id": "654860a790e218b24daec6a1",
+      "user": "user2",
+      "email": "user2@email.com"
+    },
+    {
+      "id": "654860b19d59b5a336903b95",
+      "user": "user3",
+      "email": "user3@email.com"
     }
   ],
-  "heroes": [
+  "heros": [
     {
       "id": "dc-batman",
       "superhero": "Batman",
@@ -166,33 +186,6 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
-    },
-    {
-      "id": "c_BP956",
-      "superhero": "anayeitor",
-      "publisher": "DC Comics",
-      "alter_ego": "anayarojo",
-      "first_appearance": "here",
-      "characters": "test",
-      "alt_img": "https://www.purearts.com/cdn/shop/products/DSC01062_X2.3_540x.jpg"
-    },
-    {
-      "id": "rkT3ran",
-      "superhero": "fdsfds",
-      "publisher": "DC Comics",
-      "alter_ego": "fdsfdsfds",
-      "first_appearance": "fdsfsdfds",
-      "characters": "fsdfdsfds",
-      "alt_img": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/products/city/product-compare/splendor-plus-org-leftweb.png"
-    },
-    {
-      "id": "XApXOqA",
-      "superhero": "dsadsa",
-      "publisher": "Marvel Comics",
-      "alter_ego": "dsadas",
-      "first_appearance": "dasdsa",
-      "characters": "dsadsad",
-      "alt_img": "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/251524e3b5517b689317437d881eccf0.jpe"
     }
   ]
 }
