@@ -1,23 +1,35 @@
 <div class="flex flex-column">
-  <h1>Search</h1>
-  <mat-form-field>
-    <mat-label>
-      Search a hero
-    </mat-label>
-    <input
-      type="text"
-      matInput
-      [formControl]="searchInput"
-      (input)="search()"
-      [matAutocomplete]="auto"
-    />
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selectOption($event)">
-      <mat-option *ngFor="let hero of heros" [value]="hero">
-        {{ hero.superhero }}
-      </mat-option>
-      <mat-option *ngIf="heros.length === 0 && searchInput.value && searchInput.value.length > 0" value="">
-        Was not found any hero with that name {{ searchInput.value }}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
+  <div class="flex flex-row align-items-center justify-content-start px-1">
+    <button mat-icon-button [routerLink]="['/heros/list']">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1 class="my-3">
+      Search
+    </h1>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card class="mt-2">
+    <mat-card-content>
+      <mat-form-field class="w-full mt-3">
+        <mat-label>
+          Search a hero
+        </mat-label>
+        <input
+          type="text"
+          matInput
+          [formControl]="searchInput"
+          (input)="search()"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selectOption($event)">
+          <mat-option *ngFor="let hero of heros" [value]="hero">
+            {{ hero.superhero }}
+          </mat-option>
+          <mat-option *ngIf="heros.length === 0 && searchInput.value && searchInput.value.length > 0" value="">
+            Was not found any hero with that name {{ searchInput.value }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
 </div>
