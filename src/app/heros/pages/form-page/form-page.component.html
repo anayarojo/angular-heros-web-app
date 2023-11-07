@@ -1,7 +1,12 @@
-<h1>
-  {{ currentHero.id ? 'Edit' : 'Add' }}
-  <small *ngIf="currentHero.id">{{ currentHero.superhero }}</small>
-</h1>
+<div class="flex flex-row align-items-center justify-content-start px-1">
+  <button mat-icon-button [routerLink]="['/heros/list']">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <h1 class="my-3">
+    {{ currentHero.id ? 'Edit' : 'Add' }}
+    <span *ngIf="currentHero.id">{{ currentHero.superhero }}</span>
+  </h1>
+</div>
 
 <mat-divider class="mb-2"></mat-divider>
 
