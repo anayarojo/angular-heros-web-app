@@ -1,7 +1,4 @@
-import {
-    Component,
-    OnInit,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import {
@@ -15,7 +12,8 @@ import {
   styles: [
   ]
 })
-export class LayoutPageComponent implements OnInit {
+export class LayoutPageComponent {
+
   public herosSidebarItems = [
     {
       icon: 'label',
@@ -32,16 +30,9 @@ export class LayoutPageComponent implements OnInit {
       label: 'Search',
       route: './search'
     },
-  ]
+  ];
 
   constructor(private router: Router, private authService: AuthService) {}
-
-  ngOnInit(): void {
-    this.authService.checkAuthentication()
-      .subscribe(isAuthenticated => {
-
-      });
-  }
 
   get user(): User | undefined {
     return this.authService.currentUser;

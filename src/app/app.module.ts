@@ -3,8 +3,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {
+    HerosService,
+    LocalHerosService,
+} from '@heros/services';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {
+    AuthService,
+    LocalAuthService,
+} from './auth';
 import { SharedModule } from './shared';
 
 @NgModule({
@@ -18,7 +27,16 @@ import { SharedModule } from './shared';
     HttpClientModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthService,
+      useClass: LocalAuthService
+    },
+    {
+      provide: HerosService,
+      useClass: LocalHerosService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

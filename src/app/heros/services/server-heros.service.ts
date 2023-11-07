@@ -7,13 +7,14 @@ import {
     Observable,
     of,
 } from 'rxjs';
-import { environment } from 'src/environments/environment';
+
+import { environment } from '@environments/environment';
 
 import { Hero } from '../interfaces';
+import { HerosService } from './heros.service.base';
 
-@Injectable({providedIn: 'root'})
-export class HerosService {
-
+@Injectable()
+export class ServerHerosService implements HerosService {
   private readonly baseUrl: string = environment.baseUrl;
 
   constructor(private httpClient: HttpClient) {}

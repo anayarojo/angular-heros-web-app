@@ -119,7 +119,7 @@ export class FormPageComponent implements OnInit {
     if (this.currentHero.id) {
       this.herosService.updateHero(this.currentHero)
         .subscribe(hero => {
-          this.showSnackbar(`Hero ${hero.superhero} updated successfully.`);
+          this.showSnackbar(`Hero ${hero?.superhero} updated successfully.`);
         });
       return;
     }

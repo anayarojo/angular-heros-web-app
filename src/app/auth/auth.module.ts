@@ -19,6 +19,7 @@ import {
     CommonModule,
     AuthRoutingModule,
     MaterialModule
-  ]
+  ],
+  providers: []
 })
 export class AuthModule { }

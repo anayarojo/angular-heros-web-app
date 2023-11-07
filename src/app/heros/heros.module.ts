@@ -4,6 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from '../material';
 import { CardComponent } from './components/card/card.component';
+import {
+    ConfirmDialogComponent,
+} from './components/confirm-dialog/confirm-dialog.component';
 import { HerosRoutingModule } from './heros-routing.module';
 import {
     FormPageComponent,
@@ -13,8 +16,6 @@ import {
     SearchPageComponent,
 } from './pages';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
-import { HerosService } from './services';
-import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,5 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     HerosRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    HerosService
-  ]
 })
 export class HerosModule { }

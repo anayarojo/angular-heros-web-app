@@ -14,9 +14,9 @@ export class LoginPageComponent {
   constructor(private router: Router, private authService: AuthService) {}
 
   public login(): void {
-    this.authService.login('fernando@gmail.com', '123456')
-      .subscribe(user => {
-        if (user.id) {
+    this.authService.login('john.due@email.com', 'secret')
+      .subscribe(logged => {
+        if (logged) {
           this.router.navigate(['/']);
         }
       });
